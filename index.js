@@ -4,6 +4,8 @@ const { DateTime } = require('luxon');
 const isAbsoluteUrl = require('is-absolute-url');
 const requestIp = require('request-ip');
 
+const port = process.env.PORT || 8000;
+
 const app = express();
 
 app.use(requestIp.mw())
@@ -27,7 +29,6 @@ app.get(`/redirect/:url*`, (request, result) => {
   }
 });
 
-const port = 5000;
 const server = app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
