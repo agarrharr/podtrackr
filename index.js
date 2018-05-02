@@ -10,22 +10,22 @@ const app = express();
 
 app.use(requestIp.mw())
 
-app.get(`/`, (request, result) => {
-  result.send(`Trackr`);
+app.get(`/`, (req, res) => {
+  res.send(`Trackr`);
 });
 
-app.get(`/redirect/:url*`, (request, result) => {
-  const url = `${request.params.url}${request.param(0)}`;
+app.get(`/redirect/:url*`, (req, res) => {
+  const url = `${req.params.url}${req.param(0)}`;
   const isUrl = isAbsoluteUrl(url);
   const datetime = DateTime.local();
-  const ip = request.clientIp;
+  const ip = req.clientIp;
 
   fs.appendFile(`log.csv`, `"${url}", "${isUrl}", "${datetime}", "${ip}"\n`);
 
   if (isUrl) {
-    result.redirect(url);
+    res.redirect(url);
   } else {
-    result.send(`${url} is not a valid url`);
+    res.send(`${url} is not a valid url`);
   }
 });
 
