@@ -23,7 +23,7 @@ app.get(`/redirect/:url*`, (request, result) => {
   if (isUrl) {
     result.redirect(url);
   } else {
-    result.send('Not a valid url');
+    result.send(`${url} is not a valid url`);
   }
 });
 
