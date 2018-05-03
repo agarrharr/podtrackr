@@ -1,6 +1,12 @@
-# trackr
+# podtrackr
 
-Simple app to redirect traffic and keep a log.
+Podcast Analytics
+
+Node/Express app to redirect traffic to podcast audio files and track requests.
+
+It should also have a web interface for viewing stats. You can look at stats for a particular file or for all files in an rss feed. There should be no need to register or log in. Just start using it by prefixing your url with this service's url. If you want, you could whitelist the urls allowed.
+
+It also should have an api for retrieving the stats.
 
 ## Running
 
