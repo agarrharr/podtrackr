@@ -4,6 +4,8 @@ const { DateTime } = require('luxon');
 const isAbsoluteUrl = require('is-absolute-url');
 const requestIp = require('request-ip');
 
+const Download = require('./db').Download;
+
 const port = process.env.PORT || 8000;
 
 const app = express();
@@ -27,6 +29,12 @@ app.get(`/redirect/:url*`, (req, res) => {
   } else {
     res.send(`${url} is not a valid url`);
   }
+});
+
+app.get(`/stats`, (req, res) => {
+  Download.find({}, (err, download) => {
+    res.send(download);
+  });
 });
 
 const server = app.listen(port, () => {

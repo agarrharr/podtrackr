@@ -1,0 +1,2 @@
+{"url": "hello", "isURL": "false", "timestamp": "2018-05-02T16:17:30.315-06:00", "ip": "::1" }
+{"url": "http://www.google.com", "isURL": "true", "timestamp": "2018-05-02T16:17:41.211-06:00", "ip": "::1" }
