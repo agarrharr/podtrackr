@@ -2,10 +2,10 @@
   "name": "trackr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "develop": "nodemon index.js",
+    "start": "node src/index.js",
+    "develop": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -17,6 +17,7 @@
     "is-absolute-url": "^2.1.0",
     "json2csv": "^4.1.2",
     "luxon": "^1.2.0",
+    "mongodb": "^3.0.7",
     "nodemon": "^1.17.3",
     "npm": "^6.0.0",
     "request-ip": "^2.0.2"
